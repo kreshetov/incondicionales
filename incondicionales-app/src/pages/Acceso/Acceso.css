@@ -1,0 +1,94 @@
+.cuadro-formulario {
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-row-acceso-registro {
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
+}
+
+.form-label {
+    width: 100%;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.boton-acceso, .boton-registro {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: #282c34;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.3s ease;
+}
+
+.boton-acceso:hover, .boton-registro:hover {
+    background-color: #c99e47;
+    color: white;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 480px) {
+    .cuadro-formulario {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-row-acceso-registro {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .form-label {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.3rem;
+        text-align: left;
+    }
+
+    .form-input {
+        width: 100%;
+        flex: none;
+    }
+
+    .boton-acceso,
+    .boton-registro {
+        width: 50%;
+    }
+}
