@@ -1,0 +1,89 @@
+/* Contenedor del logo */
+.nav-logo {
+    background-color: #0e1d27;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+/* Imagen del logo */
+.nav-logo img {
+    width: clamp(100px, 10%, 160px); /* Se adapta entre 100px y 160px */
+    height: auto;
+}
+
+/* Contenedor principal del nav */
+.nav-bar {
+    display: flex;
+    background-color: #c99e47;
+    flex-wrap: wrap; /* <- Permite que los items salten a otra línea si no caben */
+    padding: 1rem;
+}
+
+/* Lista de navegación */
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* <- También asegura que los <li> hagan wrap */
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para los enlaces */
+.nav-bar a,
+.nav-bar a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+/* Cada ítem del menú */
+.nav-item a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #c99e47;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item a:hover {
+    background-color: #0e1d27;
+    color: white;
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 480px) {
+    .nav-bar {
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        width: 150px;              /* ✅ todos tendrán el mismo ancho relativo */
+        max-width: 300px;        /* ✅ opcional para limitar */
+        margin: 0 auto;          /* ✅ centrado horizontal */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: #c99e47;
+        border-radius: 6px;
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-logo img {
+        width: 40%;
+    }
+}
