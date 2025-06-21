@@ -1,0 +1,67 @@
+/* src/pages/Miembros/Miembros.css */
+.lista-miembros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.miembro {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 12px;
+    width: 100%;
+    max-width: 220px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.miembro:hover {
+   box-shadow:
+    0 2px 6px rgba(201, 158, 71, 0.5),   /* dorado más suave */
+    0 4px 12px rgba(14, 29, 39, 0.4);    /* azul más profundo debajo */
+
+
+
+}
+
+.miembro img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.miembro h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    word-break: break-word;
+}
+
+.miembro span {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.miembro p {
+    font-size: 0.95rem;
+    margin: 0;
+}   
+
+/* Diseño adaptado a móviles */
+@media (max-width: 480px) {
+    .lista-miembros {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .miembro {
+        max-width: 90%;
+    }
+}
