@@ -1,17 +1,28 @@
 // src/components/Acceso.tsx
-import { useState } from "react";
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, User, onAuthStateChanged } from "firebase/auth";
+import { useState, useEffect } from "react";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, User, onAuthStateChanged, } from "firebase/auth";
 import { auth } from "../../firebase/firebaseConfig";
 
-function Acceso() {
+const Acceso = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [user, setUser] = useState<User | null>(null);
+    const [modo, setModo] = useState<'lectura' | 'admin'> ('lectura'); // Posibles modos, lecutra por defecto
 
     // Escuchar cambios en el estado de autenticación (login/logout)
-    onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        if (currentUser?.email === "kreshetov12@gmail.com") {
+            setModo('admin');
+        } else {
+            setModo('lectura');
+        }
     });
+
+        // Limpiar el listener cuando se desmonte el componente
+        return () => unsubscribe();
+    }, [setModo]);
 
     const handleLogin = async () => {
         try {
@@ -79,9 +90,9 @@ function Acceso() {
             <div className="form-row-acceso-registro">
                 <button className="boton-acceso" onClick={handleLogin}>Acceso</button>
                 <button className="boton-registro" onClick={handleRegistro}>Registro</button>
-            </div>      
+            </div>
         </div>
     );
-}
+};
 
 export default Acceso;

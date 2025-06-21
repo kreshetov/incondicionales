@@ -10,8 +10,11 @@ const NavBar = () => {
         <nav className="nav-bar">
             <ul className="nav-list">
                 <li className="nav-item">
-                    <Link to="/acceso">Acceso</Link>
-                </li>      
+                    <Link to="Miembros">Miembros</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="Acceso">Acceso</Link>
+                </li>     
             </ul>
         </nav>
         </>
