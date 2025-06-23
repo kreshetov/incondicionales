@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Importando CSS
 import './App.css';
@@ -14,9 +14,8 @@ import Miembros from './pages/Miembros/Miembros';
 import NavBar from './components/NavBar/NavBar';
 
 function App() {
-
     return (
-        <Router basename="/">
+        <Router>
             <NavBar />
             <Routes>
                 <Route path="/" element={<h1><center>Web en Construcción</center></h1>} />
@@ -24,7 +23,7 @@ function App() {
                 <Route path="/Acceso" element={<Acceso />} />
             </Routes>
         </Router>
-        );
-    }
+    );
+}
 
 export default App;

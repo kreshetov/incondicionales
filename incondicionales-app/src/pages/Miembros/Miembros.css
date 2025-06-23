@@ -1,4 +1,3 @@
-/* src/pages/Miembros/Miembros.css */
 .lista-miembros {
     display: flex;
     flex-wrap: wrap;
@@ -22,12 +21,9 @@
 }
 
 .miembro:hover {
-   box-shadow:
-    0 2px 6px rgba(201, 158, 71, 0.5),   /* dorado más suave */
-    0 4px 12px rgba(14, 29, 39, 0.4);    /* azul más profundo debajo */
-
-
-
+    box-shadow:
+        0 2px 6px rgba(201, 158, 71, 0.5),
+        0 4px 12px rgba(14, 29, 39, 0.4);
 }
 
 .miembro img {
@@ -52,7 +48,65 @@
 .miembro p {
     font-size: 0.95rem;
     margin: 0;
-}   
+}
+
+.botones-miembro {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Botones comunes */
+.btn-insertar,
+.btn-editar,
+.btn-eliminar {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón Insertar */
+.btn-insertar {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 16px auto;
+    display: block;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+    background-color: #c99e47;
+    color: white;
+}
+
+
+.btn-insertar:hover {
+    background-color: #a97f30;
+}
+
+/* Botón Editar */
+.btn-editar {
+    background-color: #c99e47; /* Dorado */
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #a97f30;
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+    background-color: #0e1d27; /* Azul oscuro */
+    color: white;
+}
+
+.btn-eliminar:hover {
+    background-color: #1d607c;
+}
 
 /* Diseño adaptado a móviles */
 @media (max-width: 480px) {
