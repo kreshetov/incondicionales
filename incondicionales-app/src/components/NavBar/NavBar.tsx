@@ -13,6 +13,9 @@ const NavBar = () => {
                     <Link to="Miembros">Miembros</Link>
                 </li>
                 <li className="nav-item">
+                    <Link to="Partidos">Partidos</Link>
+                </li>
+                <li className="nav-item">
                     <Link to="Acceso">Acceso</Link>
                 </li>     
             </ul>
