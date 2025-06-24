@@ -1,0 +1,179 @@
+.partidos-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo-partidos {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+.btn-insertar {
+    background-color: #0e1d27;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.lista-partidos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.tarjeta-partido {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-partido:hover {
+    box-shadow:
+        0 2px 6px rgba(201, 158, 71, 0.5),
+        0 4px 12px rgba(14, 29, 39, 0.4);
+}
+
+.imagen-partido {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.info-partido {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.partido-fecha {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.resultado {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.equipo {
+    padding: 0 4px;
+}
+
+.azules {
+    color: #007BFF;
+}
+
+.verdes {
+    color: #28a745;
+}
+
+.goles {
+    font-size: 1.3rem;
+}
+
+.vs {
+    color: #888;
+    font-size: 1rem;
+}
+
+.descripcion-partido {
+    font-style: italic;
+    color: #333;
+    text-align: center;
+}
+
+.link-ubicacion {
+    text-align: center;
+    display: block;
+    margin-top: 0.5rem;
+    color: #0066cc;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.link-ubicacion:hover {
+    text-decoration: underline;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.btn-editar,
+.btn-eliminar {
+    flex: 1;
+    padding: 0.5rem;
+    margin: 0 4px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-editar {
+    background-color: #c99e47;
+    color: #333;
+}
+
+.btn-eliminar {
+    background-color: #0e1d27;
+    color: white;
+}
+
+/* 🌐 Responsive: Ajustes para móviles (pantallas <= 480px) */
+@media (max-width: 480px) {
+    .partidos-container {
+        padding: 1rem;
+    }
+
+    .btn-insertar {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .lista-partidos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-partido {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .imagen-partido {
+        height: 160px;
+    }
+
+    .acciones {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .btn-editar,
+    .btn-eliminar {
+        width: 100%;
+        margin: 0;
+    }
+}
