@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/incondicionales/static/css/main.f1c723c5.css",
+    "main.js": "/incondicionales/static/js/main.dbe45c81.js",
+    "static/js/453.f011bf0b.chunk.js": "/incondicionales/static/js/453.f011bf0b.chunk.js",
+    "static/media/logo_incondicionales.png": "/incondicionales/static/media/logo_incondicionales.2c1c19011077488f63b8.png",
+    "index.html": "/incondicionales/index.html",
+    "main.f1c723c5.css.map": "/incondicionales/static/css/main.f1c723c5.css.map",
+    "main.dbe45c81.js.map": "/incondicionales/static/js/main.dbe45c81.js.map",
+    "453.f011bf0b.chunk.js.map": "/incondicionales/static/js/453.f011bf0b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f1c723c5.css",
+    "static/js/main.dbe45c81.js"
+  ]
+}
