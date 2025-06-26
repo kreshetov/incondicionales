@@ -64,6 +64,16 @@
     color: #666;
 }
 
+.partido-fecha-mvp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+
 .resultado {
     font-size: 1.2rem;
     font-weight: bold;
