@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, User, onAuthStateChanged, } from "firebase/auth";
 import { auth } from "../../firebase/firebaseConfig";
+import './Acceso.css';
 
 const Acceso = () => {
     const [email, setEmail] = useState("");

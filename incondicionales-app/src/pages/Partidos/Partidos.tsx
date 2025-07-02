@@ -18,7 +18,7 @@ const Partidos = () => {
     const [partidos, setPartidos] = useState<Partido[]>([]);
 
     useEffect(() => {
-        fetch(`https://storageincondicionales.blob.core.windows.net/partidos/partidos`)
+        fetch(`https://storageincondicionales.blob.core.windows.net/partidos/partidos/partidos`)
             .then(res => res.json())
             .then(data => setPartidos(data))
             .catch(err => console.error('Error al cargar partidos:', err));
