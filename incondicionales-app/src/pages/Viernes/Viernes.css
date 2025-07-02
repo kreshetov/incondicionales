@@ -1,0 +1,142 @@
+/* Contenedor general */
+.contenedor-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+}
+
+/* Tarjeta principal */
+.lista {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: all 0.3s ease;
+}
+
+/* Información del partido */
+.fecha-partido {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+/* Secciones de jugadores */
+.jugadores-anotados {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Subtítulos (Titulares / Reservas) */
+.subtitulo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 16px;
+    color: #00796b;
+    text-align: center;
+}
+
+/* Fila de cada jugador */
+.fila-jugador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Número de jugador */
+.enumeracion {
+    width: 24px;
+    text-align: right;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Jugador ya anotado */
+.jugador {
+    background-color: #f0f0f0;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    flex: 1;
+    color: #333;
+}
+
+/* Input para anotarse */
+.jugador-input {
+    flex: 1;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.jugador-input:focus {
+    outline: none;
+    border-color: #00796b;
+}
+
+/* Estilo botón */
+.boton-apuntarme {
+    padding: 12px 20px;
+    background-color: #00796b;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-apuntarme:hover {
+    background-color: #004d40;
+}
+
+/* Estilo especial para reservas */
+.reserva .jugador {
+    background-color: #fff3cd; /* amarillo claro */
+}
+
+.reserva .jugador-input {
+    background-color: #fffbe6;
+    border-color: #ffc107;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    .lista {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .fecha-partido {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .jugador,
+    .jugador-input {
+        font-size: 0.95rem;
+        padding: 6px 12px;
+    }
+
+    .boton-apuntarme {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 14px;
+    }
+}

@@ -10,6 +10,7 @@ interface Partido {
     foto: string,
     golesAzules: number,
     golesVerdes: number,
+    mvp: string,
     descripcion: string
 }
 
@@ -17,7 +18,7 @@ const Partidos = () => {
     const [partidos, setPartidos] = useState<Partido[]>([]);
 
     useEffect(() => {
-        fetch(`https://storageincondicionales.blob.core.windows.net/partidos/partidos`)
+        fetch(`https://storageincondicionales.blob.core.windows.net/partidos/partidos/partidos`)
             .then(res => res.json())
             .then(data => setPartidos(data))
             .catch(err => console.error('Error al cargar partidos:', err));
@@ -34,14 +35,19 @@ const Partidos = () => {
             </button>
 
             <div className="partidos-container">
-            <h2 className="titulo-partidos">Historial de Partidos</h2>
+                <h2 className="titulo-partidos">Historial de Partidos</h2>
                 <div className="lista-partidos">
                     {partidos.map((partido, index) => (
                         <div className="tarjeta-partido" key={index}>
                             <img className="imagen-partido" src={partido.foto} alt={`Partido en ${partido.campo}`} />
                             
                             <div className="info-partido">
-                                <div className="partido-fecha">{partido.fecha}</div>
+                                <div className="partido-fecha-mvp">
+                                    <span className="partido-fecha">{partido.fecha}</span>
+                                    <span className="mvp">
+                                        <strong>MVP ⭐{partido.mvp}</strong> <span className="estrella"></span>
+                                    </span>
+                                </div>
 
                                 <div className="resultado">
                                     <span className="equipo azules">{partido.equipoAzules}</span>
@@ -65,7 +71,7 @@ const Partidos = () => {
                         </div>
                     ))}
                 </div>
-        </div>
+            </div>
         </>
     );
 }
