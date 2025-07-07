@@ -92,7 +92,7 @@ const Viernes = () => {
                                         className="jugador-input"
                                         type="text"
                                         placeholder="Escribe tu nombre..."
-                                        value={nombre}
+                                        value={nombre === "disponible" ? "" : nombre}
                                         onChange={(e) => {
                                             const nuevosNombres = [...nombres];
                                             nuevosNombres[index + 16] = e.target.value;
