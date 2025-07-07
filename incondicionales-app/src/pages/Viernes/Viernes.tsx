@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './Viernes.css';
 
 const Viernes = () => {
-    const [nombres, setNombres] = useState<string[]>(Array(20).fill("")); // 20 vacíos inicialmente
+    const [nombres, setNombres] = useState<string[]>(Array(20).fill("disponible")); // 20 vacíos inicialmente
 
     // Cargar lista desde Azure Blob
     useEffect(() => {
@@ -14,8 +14,26 @@ const Viernes = () => {
             .catch(err => console.error('Error al cargar la lista:', err));
     }, []);
 
+    // Validar campos de la lista
+    const validarLista = (nombres: string[]): boolean => {
+        const nombresValidos = /^[A-Za-z]+( [A-Za-z]+)?$/;
+
+        for (const nombre of nombres) {
+            if (!nombresValidos.test(nombre)) {
+                console.log("Nombre inválido:", nombre);
+                console.log ("Solo se permiten letras y un espacio entre nombres");
+                alert("Solo se permiten letras y un espacio entre nombres");
+             return false;
+            }
+        }
+        return true;
+    };
+
     // PUT hacia Azure Function
     const apuntarse = async () => {
+        if (!validarLista(nombres)) {
+            return;
+        }
         try {
             const res = await fetch(`https://incondicionales-app-c9dqb9fta6bxckef.spaincentral-01.azurewebsites.net/api/ActualizarLista`, {
                 method: "PUT",
@@ -54,7 +72,7 @@ const Viernes = () => {
                                 className="jugador-input"
                                 type="text"
                                 placeholder="Escribe tu nombre..."
-                                value={nombre}
+                                value={nombre === "disponible" ? "" : nombre}
                                 onChange={(e) => {
                                     const nuevosNombres = [...nombres];
                                     nuevosNombres[index] = e.target.value;
