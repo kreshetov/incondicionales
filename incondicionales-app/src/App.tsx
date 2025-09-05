@@ -6,6 +6,7 @@ import './components/NavBar/NavBar.css';
 
 // Importando Paginas
 import Miembros from './pages/Miembros/Miembros';
+import Miembro from './pages/Miembro/Miembro';
 import Viernes from './pages/Viernes/Viernes';
 import Partidos from './pages/Partidos/Partidos';
 import Acceso from './pages/Acceso/Acceso';
@@ -20,6 +21,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<h1><center>Web en Construcción</center></h1>} />
                 <Route path="/Miembros" element={<Miembros />} />
+                <Route path="/Miembros/:id" element={<Miembro />} />
                 <Route path="/Viernes" element={<Viernes />} />
                 <Route path="/Partidos" element={<Partidos />} />
                 <Route path="/Acceso" element={<Acceso />} />

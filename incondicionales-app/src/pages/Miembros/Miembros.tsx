@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Miembros.css';
 
 interface Miembro {
@@ -13,7 +14,7 @@ const Miembros = () => {
     const [miembros, setMiembros] = useState<Miembro[]>([]);
 
     useEffect(() => {
-        fetch(`https://storageincondicionales.blob.core.windows.net/miembros/miembros`)
+        fetch(`https://storageincondicionales.blob.core.windows.net/miembros/miembros_resumen`)
             .then(res => res.json())
             .then(data => setMiembros(data))
             .catch(err => console.error('Error al cargar miembros:', err));
@@ -32,6 +33,7 @@ const Miembros = () => {
 
             <div className="lista-miembros">
                 {miembros.map(miembro => (
+                    <Link to = {`/Miembros/${miembro.id}`} key={miembro.id}>
                     <div className="miembro" key={miembro.id}>
                         <img src={miembro.foto} alt={miembro.nombre} />
                         <h3>
@@ -44,6 +46,7 @@ const Miembros = () => {
                             <button className="btn-eliminar">Eliminar</button>
                         </div>
                     </div>
+                    </Link>
                 ))}
             </div>
         </>
